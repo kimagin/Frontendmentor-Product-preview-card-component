@@ -52,7 +52,7 @@
   }
 
   .image-container-desktop {
-    @apply bg-yellow-500 md:flex hidden overflow-hidden w-1/2 rounded-l-xl;
+    @apply md:flex hidden overflow-hidden w-1/2 rounded-l-xl;
   }
   .image-desktop {
     @apply scale-100 transition-transform duration-300
