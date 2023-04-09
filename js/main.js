@@ -41,6 +41,8 @@ function Data() {
       exPrice: 169.99,
       isInCart: false,
       quantity: 0,
+      desktopImage: './src/assets/image-product-desktop.jpg',
+      mobileImage: './src/assets/image-product-mobile.jpg',
     },
   }
 }
