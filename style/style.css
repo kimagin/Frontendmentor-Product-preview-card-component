@@ -1,0 +1,96 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+/* Tailwind Directives : */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Styles */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply bg-cream h-screen flex justify-center items-center;
+  }
+  h1 {
+    @apply font-serif text-4xl;
+  }
+  h2 {
+    @apply font-sans;
+  }
+  p {
+    @apply text-[14px];
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex flex-col max-w-md md:max-w-2xl md:flex-row  md:h-auto  md:justify-center md:items-stretch p-6;
+  }
+  .image-container-mobile {
+    @apply rounded-t-xl 
+    md:hidden md:rounded-r-none
+    overflow-hidden;
+  }
+
+  .image-mobile {
+    @apply scale-100 transition-transform duration-300
+    group-hover:scale-105;
+  }
+
+  .image-container-desktop {
+    @apply bg-yellow-500 md:flex hidden overflow-hidden w-1/2 rounded-l-xl;
+  }
+  .image-desktop {
+    @apply scale-100 transition-transform duration-300
+    group-hover:scale-105;
+  }
+
+  .information-container {
+    @apply bg-white md:w-1/2 p-8 rounded-b-xl md:rounded-r-xl md:rounded-l-none;
+  }
+  .tag {
+    @apply text-dark-grayish-blue tracking-[.4rem] text-sm mb-2 md:mb-4 uppercase;
+  }
+  .product-title {
+    @apply mb-4 md:mb-6;
+  }
+  .text-info {
+    @apply text-dark-grayish-blue leading-6 pb-2;
+  }
+  .price-container {
+    @apply flex items-center space-x-5 my-5 md:my-7;
+  }
+  .price {
+    @apply text-dark-cyan text-4xl;
+  }
+  .ex-price {
+    @apply text-dark-grayish-blue line-through;
+  }
+  .button {
+    @apply bg-dark-cyan flex justify-center items-center space-x-2
+    py-4 rounded-lg
+    hover:bg-dark-cyan/90
+    hover:cursor-pointer
+    active:bg-dark-cyan;
+  }
+  .button-icon {
+    @apply select-none;
+  }
+  .button-text {
+    @apply text-white font-bold select-none;
+  }
+}

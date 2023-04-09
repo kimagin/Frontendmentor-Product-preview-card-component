@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/assets/favicon-32x32.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Product preview card component</title>
+    <link
+      rel="stylesheet"
+      href="style/style.css" />
+  </head>
+  <body
+    x-data="data"
+    class="">
+    <!-- Main container -->
+    <div class="main group">
+      <!-- Image container Mobile -->
+      <div class="image-container-mobile">
+        <img class="image-mobile" src="./src/assets/image-product-mobile.jpg" ></img>
+      </div>
+      <!-- Image container Desktop -->
+      <div class="image-container-desktop">
+        <img class="image-desktop" src="./src/assets/image-product-desktop.jpg" ></img>
+      </div>
+      <!-- Information container -->
+      <div class="information-container">
+        <div class="tag"
+        x-text="cardInfo.tag"
+        ></div>
+        <h1 class="product-title"
+        x-text="cardInfo.title"
+        ></h1>
+        <p class="text-info" 
+        x-text="cardInfo.description"
+        ></p>
+        <div class="price-container">
+          <h1 class="price" x-text="`$${cardInfo.price}`"></h1>
+          <h2 class="ex-price" x-text="`$${cardInfo.exPrice}`"></h2>
+        </div>
+        <!-- Add to cart Button -->
+        <div class="button">
+          <div class="button-icon">
+            <img
+              src="./src/assets/icon-cart.svg"
+              alt="" />
+          </div>
+          <h2 class="button-text"
+          x-text="`Add to Cart ${cardInfo.isInCart?`(${cardInfo.quantity} in cart)`:''}`"
+          @click.debounce.100="cardInfo.isInCart = true;cardInfo.quantity++"
+          >Add to Cart</h2>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="js/main.js"></script>
+  </body>
+</html>
