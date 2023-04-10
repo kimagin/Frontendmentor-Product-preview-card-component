@@ -31,6 +31,12 @@
   p {
     @apply text-[14px];
   }
+  img {
+    max-width: 100%;
+    height: auto;
+    content-visibility: auto;
+    object-fit: cover;
+  }
 }
 
 @layer components {
