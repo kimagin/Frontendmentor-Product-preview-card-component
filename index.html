@@ -26,13 +26,13 @@
     <main class="main group">
       <!-- Image container Mobile -->
       <div class="image-container-mobile">
-        <img width="auto" height="auto" class="image-mobile" 
+        <img class="image-mobile" 
         src="./src/assets/image-product-mobile.jpg"
         alt="A perfume bottle with plants" ></img>
       </div>
       <!-- Image container Desktop -->
       <div class="image-container-desktop">
-        <img width="auto" height="auto" class="image-desktop" 
+        <img class="image-desktop" 
         src="./src/assets/image-product-desktop.jpg"
         alt="A perfume bottle 
         with plants" ></img>
@@ -53,7 +53,7 @@
           <h2 class="ex-price" x-text="`$${cardInfo.exPrice}`"></h2>
         </div>
         <!-- Add to cart Button -->
-        <div class="button">
+        <div class="button" @click.debounce.300="cardInfo.isInCart = true;cardInfo.quantity++">
           <div class="button-icon">
             <img
               width="18"
@@ -63,7 +63,7 @@
           </div>
           <h2 class="button-text"
           x-text="`Add to Cart ${cardInfo.isInCart?`(${cardInfo.quantity} in cart)`:''}`"
-          @click.debounce.100="cardInfo.isInCart = true;cardInfo.quantity++"
+          
           >Add to Cart</h2>
         </div>
       </div>

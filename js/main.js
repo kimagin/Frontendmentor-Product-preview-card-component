@@ -21,6 +21,22 @@ const initApp = async () => {
   window.Alpine = Alpine
   Alpine.data('data', Data)
   Alpine.start()
+
+  // async function getImage(url, selector) {
+  //   fetch(url)
+  //     .then((res) => {
+  //       return res.blob()
+  //     })
+  //     .then((blob) => {
+  //       select(selector).src = URL.createObjectURL(blob)
+  //       select(selector).width = blob.size
+  //       select(selector).height = blob.size
+  //     })
+  //     .catch((err) => {})
+  // }
+
+  // await getImage('./src/assets/image-product-mobile.jpg', '.image-mobile')
+  // await getImage('./src/assets/image-product-desktop.jpg', '.image-desktop')
 }
 
 event(document, 'DOMContentLoaded', initApp)
@@ -41,8 +57,6 @@ function Data() {
       exPrice: 169.99,
       isInCart: false,
       quantity: 0,
-      desktopImage: './src/assets/image-product-desktop.jpg',
-      mobileImage: './src/assets/image-product-mobile.jpg',
     },
   }
 }
